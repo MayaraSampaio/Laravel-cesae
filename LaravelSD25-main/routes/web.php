@@ -4,6 +4,8 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UtilController;
 use App\Http\Controllers\GiftController;
+use App\Http\Controllers\DashboardController;
+
 use App\Models\Task;
 use Illuminate\Support\Facades\Route;
 
@@ -56,4 +58,6 @@ Route::get('/add-gift', [GiftController::class, 'addGift'])->name('gifts.add');
 Route::post('/store-gift', [GiftController::class, 'storeGifts'])->name('gifts.store');
 Route::get('/gift/{id}', [GiftController::class, 'viewGift'])->name('gifts.view');
 Route::get('/delete-gift/{id}', [GiftController::class, 'deleteGift'])->name('gifts.delete');
-Route::post('/dashboard-backoffice', [DashboardController::class,'viewDashboard'])->name('dashboard.view')->middleware('auth');
+
+//Dashboard
+Route::get('/dashboard-backoffice', [DashboardController::class,'viewDashboard'])->name('dashboard.view')->middleware('auth');

@@ -1,13 +1,13 @@
 @extends('layouts.fe_master')
 
 @section('content')
-    @if(auth()->user())
+    @if(Auth::user()->user_type == \App\Models\User::TYPE_ADMIN)
     <div class="alert alert-success" role="alert">
-            Conta de Administrador>
+            Conta de Administrador
     </div>
     @endif
     <div>
-         <h1>Olá, {{ auth()->user()->name }}</h1>
+         <h1>Olá, {{ Auth::user()->name }}</h1>
     </div>
 
 

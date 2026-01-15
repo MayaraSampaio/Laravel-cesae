@@ -24,6 +24,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
+                <th scope="col">Foto</th>
                 <th scope="col">Email</th>
                 <th scope="col">Nif</th>              
             </tr>
@@ -33,6 +34,9 @@
                 <tr>                   
                     <th scope="row">{{ $user->id }}</th>
                     <td>{{ $user->name }}</td>
+
+
+                    <td><img src="{{$user->photo? asset('storage/'.$user->photo) : asset('images/no_photos.webp') }}" alt="user-photo"></td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->nif }}</td>
                      @auth

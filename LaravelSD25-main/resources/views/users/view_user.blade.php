@@ -3,7 +3,7 @@
 @section('content')
     <h5>Aqui vamos ter os dados do user {{ $user -> name }}</h5>
  
-       <form method="POST" action="{{ route('users.store') }}">
+       <form method="POST" action="{{ route('users.update') }}" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="id" value="{{ $user->id }}">
         @method('PUT')
@@ -33,9 +33,12 @@
             <input value="{{ $user->nif }}" name="nif" type="text" class="form-control" id="exampleInputEmail1"
                 aria-describedby="emailHelp">
         </div>
-            
+        
+        <div>
+            <input type="file" name="photo" accept="image/*">
+        </div>           
            
-
+        
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
