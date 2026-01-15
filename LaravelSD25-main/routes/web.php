@@ -56,4 +56,4 @@ Route::get('/add-gift', [GiftController::class, 'addGift'])->name('gifts.add');
 Route::post('/store-gift', [GiftController::class, 'storeGifts'])->name('gifts.store');
 Route::get('/gift/{id}', [GiftController::class, 'viewGift'])->name('gifts.view');
 Route::get('/delete-gift/{id}', [GiftController::class, 'deleteGift'])->name('gifts.delete');
-
+Route::post('/dashboard-backoffice', [DashboardController::class,'viewDashboard'])->name('dashboard.view')->middleware('auth');
