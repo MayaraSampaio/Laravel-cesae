@@ -30,28 +30,34 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('users.add') }}">Adicionar User</a>
                     </li>
- 
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('users.all') }}">Todos Users</a>
                     </li>
- 
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('tasks.all') }}">Todas as Tarefas</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="{{ route('gifts.all') }}">Prendas de Natal</a>
                 </li>
- 
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('gifts.add') }}">Adicionar Prenda</a>
                 </li>
+                @auth
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ route('dashboard.view') }}">BackOffice</a>
+                </li>
+                @endauth
+
                 </ul>
-               
- 
+
+
             </div>
                         @if (Route::has('login'))
                 <nav class="flex items-center justify-end gap-4">
-                    @auth                       
+                    @auth
                         <form method="POST" action="{{ route('logout')}}">
                             @csrf
                             <button type="submit">logout</button>
@@ -74,10 +80,10 @@
                     @endauth
                 </nav>
             @endif
- 
+
         </div>
 
-        
+
     </nav>
     <div class="container">
         @yield('content')

@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function viewDashboard(){
-        return view('backoffice.dashboard_backoffice');
+        return view('backoffice.view_dashboard');
     }
 }
